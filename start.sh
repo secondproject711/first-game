@@ -51,4 +51,4 @@ xray run -test -c /tmp/x.json || { echo "xray config invalid"; exit 1; }
 
 ( xray run -c /tmp/x.json; echo "xray exited"; kill 1 ) &
 
-exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+exec caddy run --config "${CADDYFILE:-/etc/caddy/Caddyfile}" --adapter caddyfile
